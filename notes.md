@@ -11,10 +11,11 @@ Toggle the kth bit: num ^= (1 << k).
 To check if a number is a power of 2, num & num - 1 == 0
 
 ```
-when to use it, how to know it will help 
+when to use it, how to know it will help ?
+``` Java
 2 >> 1 = 1
 5 >> 1 = 2
-
+```
 * Cannot sort in subsequence subarray problems
 ```Java
 for(int i = arr.length -1; i > -1; --i){
@@ -67,7 +68,7 @@ n = n - placesToShift;
 ```
 * if the solution takes n^2, try to sort the array (not possible in case of subsequence and subarray problems)
 * 256 length array to calculate the frequency
-* if need is to deal 
+* if need is to deal with individual digit in an number use this.
 ```Java
 int n = 123456789
 narray = (n + "").toCharArray() \\ ['1','2','3','4','5','6','7','8','9]
@@ -84,7 +85,7 @@ TODO:
 ```Java
 new ArrayList().toArray(new Integer[0]);
 note: cannot convert to primitive types
-so cannot do this new ArrayList().toArray(new int[0]);
+so cannot do this new ArrayList().toArray(new int[0]); ERROR
 ```
 * To initialize an array ``` Arrays.fill(arr, -1);```
 ### String patterns & string calculations
@@ -139,22 +140,31 @@ DFS(Node node, HashSet<Node> visited){
 	for(Node neighnors : node){
 		DFS(neignors, visited);
 	}
+	// if ans not found, the mark the node un-visited also, so it can be reached via another path 
+	unvisit(node);
 }
 ```
 
 ### Topological sort: 
-`TODO`
 ```Java
-T = []
-visited = []
-
-topological_sort( cur_vert, N, adj[][] ){
-    visited[cur_vert] = true
-    for i = 0 to N
-        if adj[cur_vert][i] is true and visited[i] is false
-        topological_sort(i)
-    T.insert_in_beginning(cur_vert)
-}
+private boolean topologicalSort(int course, List<Integer> result) {
+        if (done[course])
+            return true;
+        if (visited[course])
+            return false; // cycle found
+        visited[course] = true;
+        if (adjacency_list[course] != null) {
+            for (int prereqCourse : adjacency_list[course]) {
+                if (!topologicalSort((prereqCourse, result))){
+                    return false; 
+                }
+            }
+        }
+        visited[course] = false;
+        done[course] = true;
+        result.add(course);
+        return true;
+    }
 ```
 
 ### Breadth First Search: Level wise
