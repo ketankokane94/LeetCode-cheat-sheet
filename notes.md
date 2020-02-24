@@ -31,7 +31,18 @@ for(int i = arr.length -1; i > -1; --i){
 // above is o(n2) way of solving subsequence problem, substring problems
 
 * Making adjency list quickly.
-TODO
+```Java
+public List<Integer>[] getAdjacencyList(int n, int[][] prereqs) {
+        List<Integer>[] list = new ArrayList[n];
+        for (int[] prereq : prereqs){
+            if(list[prereq[0]] == null){
+                list[prereq[0]]  = new ArrayList<>();
+            }
+            list[prereq[0]].add(prereq[1]);
+        }
+       return list;
+    }
+```
 
 ## Intervals: 
 sort them based on the __start time__. 
