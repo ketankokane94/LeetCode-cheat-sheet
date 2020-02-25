@@ -1,6 +1,6 @@
 # Technqiue and Algorithms Problem
 ## Bit Manipulation 
-`I use to find the middle element of an array given left and right most index`
+`I use it to find the middle element of an array given left and right most index`
 ```Java
 middle = left + right >> 1;
 
@@ -18,7 +18,7 @@ when to use it, how to know it will help ?
 ```
 * Cannot sort in subsequence subarray problems
 ```Java
-for(int i = arr.length -1; i > -1; --i){
+for(int i = arr.length-1; i > -1; --i){
 	some temp var init
 	for(int j = i + 1; j < arr.length ; j++){
 		do something with prev seen elements
@@ -43,7 +43,16 @@ public List<Integer>[] getAdjacencyList(int n, int[][] prereqs) {
        return list;
     }
 ```
-
+## Handling time strings
+```Java
+private int convert(String str){
+	// convert everything to minutes, was the trick 23:59 is how many minutes ?
+        String[] split = str.split(":", 2);
+        int hour = Integer.parseInt(split[0]) * 60;
+        int min =  Integer.parseInt(split[1]);
+        return hour + min;
+    }
+```
 ## Intervals: 
 sort them based on the __start time__. 
 * Meeting rooms
@@ -52,7 +61,7 @@ sort them based on the __start time__.
 ```[[1, 2], [4, 7]]```
 ```Java
 public boolean overlap(int[] a, int[]b){
-	return a[0]<b[1] &&  b[0] < a[1];
+	return a[0]<b[1] &&  b[0]8i<a[1];
 }
 
 public int[] mergeInterval(int[] a , int[] b){
@@ -123,15 +132,16 @@ for(currentPrice : prices){
 return maxProfit;
 ```
 * Things about traversing from right to left.
-Kadane's algorithm:
 
+Kadane's algorithm:
+```TODO```
 
 
 ## Graphs:
 ### Depth First Search: Depth wise
 * Many problems using DFS 
 * Maze search, connected Islands, 
-`Many problems which seems DFS but arent be aware of that trick`
+`few problems which seems DFS but arent be aware of that trick, if order of print matters then its not DFS, its most probably Topological sort`
 
 ```Java
 int [][] Directions = new int[][]{
@@ -180,10 +190,11 @@ private boolean topologicalSort(int course, List<Integer> result) {
 
 ### Breadth First Search: Level wise
 * common problems and uses // TODO
-1. Zig Zag traversal, level wise sum, traversal 
+1. Zig Zag traversal, level wise sum, traversal.
+2. RightSideView
 not very interesting problems on BFS
 ```Java
-Queue<something> queue = new Queue();
+Queue<something> queue = new LinkedList();
 queue.add(rootNote);
 // BFS can be done using queue without recursion
 while(!queue.isEmpty()){
