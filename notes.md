@@ -139,6 +139,9 @@ Kadane's algorithm:
 
 ## Graphs:
 ### Depth First Search: Depth wise
+Time complexity: for adjacency List O(V+E)
+Space complexity: ??
+
 * Many problems using DFS 
 * Maze search, connected Islands, 
 `few problems which seems DFS but arent be aware of that trick, if order of print matters then its not DFS, its most probably Topological sort`
@@ -189,6 +192,8 @@ private boolean topologicalSort(int course, List<Integer> result) {
 ```
 
 ### Breadth First Search: Level wise
+Time complexity: for adjacency List O(V+E)
+Space complexity: ??
 * common problems and uses // TODO
 1. Zig Zag traversal, level wise sum, traversal.
 2. RightSideView
