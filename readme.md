@@ -101,6 +101,28 @@ TODO:
 ```code template for Sliding window```
 * Dutch flag problem:
 	implace moving of elements, elements values needs to be known
+
+>A rather straight forward solution is a two-pass algorithm using counting sort.
+First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
+
+>1 pass: 
+``` Java
+int p0 = 0; // all elements to the left of this are 0 
+int p2 = nums.length - 1; // all elements to the right of this are 2
+for(int idx = p0; idx <= p2; idx++){
+	if(nums[idx] == 0 ){
+		swap(nums, p0, idx);
+		p0++;
+		continue;
+	}
+	if(nums[idx] == 2){
+		swap(nums, p2, idx);
+		p2--;
+		idx--;
+		continue;
+	}   
+}
+```
 + generate array from arraylist
 ```Java
 new ArrayList().toArray(new Integer[0]);
