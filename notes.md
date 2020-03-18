@@ -234,6 +234,19 @@ whie(fast != null || fast.next != null){
 ```
 
 ### Trees: 
+
+```Java
+//This is the poor man's sorted insertion / Binary Search Tree 
+    ArrayList<Integer> list = new ArrayList<Integer>() {
+        public boolean add(Integer mt) {
+            int index = Collections.binarySearch(this, mt);
+            if (index < 0) index = ~index;
+            super.add(index, mt);
+            return true;
+        }
+    };
+```
+
 Tree problems are designed tot think recursively.
 ```Java
 public Node insert(Node root, int value){
