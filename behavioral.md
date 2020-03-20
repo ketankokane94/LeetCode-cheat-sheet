@@ -54,6 +54,8 @@ I like things to be automated, I don't enjoy doing the same thing again and agai
 * good at motivating people around me in achieving a common goal.
 * I can be decisive.
 * I am geek by nature.
+* Ability to articulate effectively technical challengess & solutions
+
 
 ## Weakness: 
 * Talking a step back 
