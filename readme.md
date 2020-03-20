@@ -1,3 +1,20 @@
+### Communication: 
+> Once you get into coding questions, communication is the key. A candidate who needed some help along the way but communicated clearly can be even better than a candidate who breezed through the question.
+
+1. Understand what kind of problem it is. 
+2. Think out loud
+3. Slow the eff down
+4. Get unstuck
+    * Draw pictures
+    * Solve a simpler version of the problem
+    * Write a naive, inefficient solution and optimize it later
+5. Wait for a hint
+6. Think about the bounds on space and runtime
+7. Apply a common algorithmic pattern
+8. Get your thoughts down
+9. Call a helper function and keep moving
+
+
 # Technqiue and Algorithms Problem
 ## Bit Manipulation 
 `I use it to find the middle element of an array given left and right most index`

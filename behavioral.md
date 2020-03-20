@@ -11,7 +11,20 @@
 Practice, Practice and Practice
 
 ## STAR
+1. Situation
+2. Task
+3. Action
+4. Result
 
+### You should have atleast one:
+1. Eg of interesting problem you solved
+2. Eg of Interpersonal conflict you overcame
+3. Eg of Leadership or ownership
+4. Story of what you should have done differently
+5. Piece of trivia about your favaorite language and something you don't like about said language.
+6. Questions about companies product/business
+7. Questions about the companies engineering strategy(testing, scrum, Development methodology)
+8. Nerd out about stuff, Show you're proud of what you've done, you're amped about what they're doing and you have questions
 
 
 # Behavioral
