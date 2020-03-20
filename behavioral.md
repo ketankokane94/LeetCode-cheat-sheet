@@ -1,15 +1,16 @@
+* Show, Don't tell:
+> Difference between a good and a great answer, comes down to showing rather than telling.
 
-* Process va thread:
-> A process is an executing instance of an application and A thread is a path of execution within a process. ... Another difference between a thread and a process is that threads within the same process share the same address space, whereas different processes do not
+1. Sprinkle in specific details
+> Don't skimp on the details, Look out for opportunities to use specifics, especially if they're at all quirky, funny, suprisinging or otherwise memorable.
 
-* First missing positive Done, use the given array itself
-* Find kth smallest number in a stream normal priorityQueue in Java
-* Dutch flag done
-* Reversed index - document frequency
-* Median of two sorted array 
-* Search in rotated sorted array
-* Magic index
-* Find min in rotated sorted array
+2. Tell a story from your life
+3. Use someone else's voice
+> lightly detailed story is better suited to show strength.
+
+Practice, Practice and Practice
+
+## STAR
 
 
 
@@ -17,14 +18,7 @@
 * Challenges faced
 * About me
 * Impact of my project
-## Oracle principles (Oci values)
-1. Take action: 
-> We move quickly but deliberately, and always toward a better solution. Notice something that's not quite right? Fix it. See a gap? Fill it. Struggling with a bad process? Improve it.
-2. Never Stop Learning:
-> Embrace change as an opportunity to learn
-3. Collaboration is king:
-4. Work without ego:
-> We are humble. We learn from failures rather than seeking to place blame, and we don’t invoke rank to convince others we are right. We help each other succeed.
+
 
 * What are you currently working on 
 
@@ -72,3 +66,13 @@ Have simple definition of fancy java terms.
 * Does the team follow agile methodology?
 * What's the internship program like?
 * How many interns?
+* Can you share more about the day-to-day responsibilities of this position? What’s a typical day like?
+* What are your favorite and least favorite parts of the job?
+* Why did you decide to join Company X?
+* Can you tell me about the opportunities for career advancement at Company X?
+
+
+## Description of each project:
+
+* Automatic Scheduler:
+> I am a man of routine, who is also a sort of geek in nature, on waking up every morning, I use google calendar to schedule my entire day, so I know at what time I would be doing what activity. I decide to write a tool which interacted with google calendar and google tasks API and using some complex scheduling algorithm figures out a daily schedule for me and pushes it back to the google calendar for  me to access.
