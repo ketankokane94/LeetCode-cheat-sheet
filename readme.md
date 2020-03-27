@@ -178,6 +178,8 @@ Kadane's algorithm:
 
 ## Graphs:
 ### Depth First Search: Depth wise
+> DFS has an issue when the Depth of tree is very large, for python 1000 
+
 Time complexity: for adjacency List O(V+E)
 Space complexity: ??
 

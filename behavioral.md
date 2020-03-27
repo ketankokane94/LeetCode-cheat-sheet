@@ -48,6 +48,12 @@ Motivated, Driven, Goal Oriented. Computer Programming enthusiast and Computer S
 * What are you currently working on 
 
 
+* You are in charge of a project and the time is limited, how would you manage to deliver results and set expectations?
+> from an engineering point of view, I would do something like poker sizing, with aim to break down the entire result into sub-results and estimate each task and come up with a realistic goal of how much can be delivered within the given time frame.
+
+* Follow up: Given more engineering resources how would you handle the same situation?
+
+
 What do I need to convey?
 * Are you a good team player? :
 > can manage chaos, can step up to challenge. 

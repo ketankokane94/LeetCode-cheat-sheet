@@ -11,6 +11,9 @@
 * Magic index
 * Find min in rotated sorted array
 * Parse Escaped Characters done
+* Two BST: check if they are similar: ignore duplicates (done)
+* Print parents of all leaves in a BST (print all non-leaf nodes?)
+* Saddle Points in Matrix (done) basic nsquare solution
 
 ## Oracle principles (Oci values)
 1. Take action: 
