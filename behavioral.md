@@ -39,6 +39,11 @@ Motivated, Driven, Goal Oriented. Computer Programming enthusiast and Computer S
 >My strengths are to connect dots between two complex ideas, reading between the lines. a passion for coming up solutions without reinventing the wheel to reduce the repetitive work and innate ability to grasp new technologies/concepts very quickly.
 * Impact of my project
 
+* what cool technologies or algorithms have you used:
+> 
+
+* what is unique and different that people could learn from you?
+> I am a strong believer of DRY principle, so I always find a way to avoid reinventing the wheel by hacking the process, but if given a challenge of building something custom I can rollup my sleeves and go for it. 
 
 * What are you currently working on 
 

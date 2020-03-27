@@ -1,5 +1,5 @@
 
-* Process va thread:
+* Process vs thread:
 > A process is an executing instance of an application and A thread is a path of execution within a process. ... Another difference between a thread and a process is that threads within the same process share the same address space, whereas different processes do not
 
 * First missing positive Done, use the given array itself
@@ -10,7 +10,7 @@
 * Search in rotated sorted array
 * Magic index
 * Find min in rotated sorted array
-* Parse Escaped Characters
+* Parse Escaped Characters done
 
 ## Oracle principles (Oci values)
 1. Take action: 
