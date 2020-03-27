@@ -26,10 +26,17 @@ Practice, Practice and Practice
 7. Questions about the companies engineering strategy(testing, scrum, Development methodology)
 8. Nerd out about stuff, Show you're proud of what you've done, you're amped about what they're doing and you have questions
 
-
+```
+Motivated, Driven, Goal Oriented. Computer Programming enthusiast and Computer Science Graduate student at Rochester Institute of Technology, with 2+years of work experience. Actively seeking Software engineering Internship Summer 2020.
+```
 # Behavioral
 * Challenges faced
 * About me
+>Software engineer with an interest in application development, big data analytics, and machine learning. Currently pursuing Masters in computer science at Rochester Institute of Technology. 
+
+>Previously worked with a fintech for 2 years as a Full-stack developer, working with Angular, C#, MVC .NET, MsSQL following agile methodology, and Test-Driven Development. Played versatile roles in the team ranging from managing release content to ensure proper burndown, acted as a consulting alias from the developer team to the support team for high priority production issues, and experience of communicating efficiently with the required shareholders regarding various statuses. All while managing everyday development activity.
+
+>My strengths are to connect dots between two complex ideas, reading between the lines. a passion for coming up solutions without reinventing the wheel to reduce the repetitive work and innate ability to grasp new technologies/concepts very quickly.
 * Impact of my project
 
 

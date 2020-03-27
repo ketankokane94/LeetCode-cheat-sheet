@@ -13,3 +13,9 @@
 * Bring validators on client side
 * Document attachment facade
 > Changed already working functionality to better provide faster access
+* release co-ordinator
+> managing release content by deciding the delivery schedule of each individual feature to ensure smooth and quality delivery of content, interact on daily basis with all the share holders BA, Testing teams to update on the release status.
+
+* Proxy between support team and developer team
+> acted as consulting alias from the developer team to the support team for high priority production related issues.
+*
