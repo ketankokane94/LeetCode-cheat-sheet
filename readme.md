@@ -155,6 +155,8 @@ to get the asci value for using 26 int frequency array
 'b' - 1 = 97 still returns the int value
 (char)('b' - 1) = 'a' need to explicitly type cast into character
 ```
+#### A bit advanced topics in strings:
+![alt text](/images/string_matching_algos.png)
 
 best time to buy and sell stocks:
 ```Java
