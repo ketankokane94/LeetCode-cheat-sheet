@@ -1,38 +1,86 @@
-### Communication: 
-> Once you get into coding questions, communication is the key. A candidate who needed some help along the way but communicated clearly can be even better than a candidate who breezed through the question.
 
-1. Understand what kind of problem it is. 
-2. Think out loud
-3. Slow the eff down
-4. Get unstuck
-    * Draw pictures
-    * Solve a simpler version of the problem
-    * Write a naive, inefficient solution and optimize it later
-5. Wait for a hint
-6. Think about the bounds on space and runtime
-7. Apply a common algorithmic pattern
-8. Get your thoughts down
-9. Call a helper function and keep moving
+# Bit Manipulation 
+* I use it to find the middle element of an array, given left and right most index
 
 
-# Technqiue and Algorithms Problem
-## Bit Manipulation 
-`I use it to find the middle element of an array given left and right most index`
-```Java
-middle = left + right >> 1;
+1. `middle = left + right >> 1;`
+1. Test kth bit is set: `num & (1 << k) != 0`
+1. Set kth bit: `num |= (1 << k);`
+1. Turn off kth bit: `num &= ~(1 << k)`
+1. Toggle the kth bit: `num ^= (1 << k)`
+1. To check if a number is a power of 2, `num & num - 1 == 0`
 
-Test kth bit is set: num & (1 << k) != 0.
-Set kth bit: num |= (1 << k).
-Turn off kth bit: num &= ~(1 << k).
-Toggle the kth bit: num ^= (1 << k).
-To check if a number is a power of 2, num & num - 1 == 0
-
-```
-when to use it, how to know it will help ?
+* When to use it, how to know it will help ?
 ``` Java
 2 >> 1 = 1
 5 >> 1 = 2
 ```
+
+# Intervals[a,b]: 
+* Sort intervals based on the __start time__. 
+	* Meeting rooms
+	* Meeting rooms which uses Priority Queue
+
+`[[1, 2], [4, 7]]`
+```Java
+public boolean overlap(int[] a, int[]b){
+	return a[0]<b[1] &&  b[0]<a[1];
+}
+
+public int[] mergeInterval(int[] a , int[] b){
+	return new int[]{Math.min(a[0], b[0]), Math.max(a[1], b[1])};
+}
+```
+
+# MISC
+## Handling time strings
+```Java
+private int convert(String str){
+	// convert everything to minutes, was the trick 23:59 is how many minutes ?
+        String[] split = str.split(":", 2);
+        int hour = Integer.parseInt(split[0]) * 60;
+        int min =  Integer.parseInt(split[1]);
+        return hour + min;
+    }
+```
+
+# Classic problems
+1. Dutch flag problem
+
+``` Java
+int p0 = 0; // all elements to the left of this are 0 
+int p2 = nums.length - 1; // all elements to the right of this are 2
+for(int idx = p0; idx <= p2; idx++){
+	if(nums[idx] == 0 ){
+		swap(nums, p0, idx);
+		p0++;
+		continue;
+	}
+	if(nums[idx] == 2){
+		swap(nums, p2, idx);
+		p2--;
+		idx--;
+		continue;
+	}   
+}
+```
+
+2. Best time to buy and sell stocks:
+```Java
+for(currentPrice : prices){
+	if(minPrice > currentPrice){
+		minPrice = currentPrice;
+	}
+	else{
+		if(maxProfit < currentPrice - minPrice){
+			maxProfit = currentPrice - minPrice;
+		}
+	}
+}
+return maxProfit;
+```
+
+# Strings and arrays:
 * Cannot sort in subsequence subarray problems
 ```Java
 for(int i = arr.length-1; i > -1; --i){
@@ -45,49 +93,8 @@ for(int i = arr.length-1; i > -1; --i){
 }
 ```
 
-// above is o(n2) way of solving subsequence problem, substring problems
+// above is O(n2) way of solving subsequence problem, substring problems
 
-* Making adjency list quickly.
-```Java
-public List<Integer>[] getAdjacencyList(int n, int[][] prereqs) {
-        List<Integer>[] list = new ArrayList[n];
-        for (int[] prereq : prereqs){
-            if(list[prereq[0]] == null){
-                list[prereq[0]]  = new ArrayList<>();
-            }
-            list[prereq[0]].add(prereq[1]);
-        }
-       return list;
-    }
-```
-## Handling time strings
-```Java
-private int convert(String str){
-	// convert everything to minutes, was the trick 23:59 is how many minutes ?
-        String[] split = str.split(":", 2);
-        int hour = Integer.parseInt(split[0]) * 60;
-        int min =  Integer.parseInt(split[1]);
-        return hour + min;
-    }
-```
-## Intervals: 
-sort them based on the __start time__. 
-* Meeting rooms
-* Meeting rooms which uses Priority Queue
-
-```[[1, 2], [4, 7]]```
-```Java
-public boolean overlap(int[] a, int[]b){
-	return a[0]<b[1] &&  b[0]8i<a[1];
-}
-
-public int[] mergeInterval(int[] a , int[] b){
-	return new int[]{Math.min(a[0], b[0]), Math.max(a[1], b[1])};
-}
-```
-
-## Strings and arrays:
-* [0, ... n-1] indexing 
 * memorize the code for deletion of element in an array
 * memorize the code for shift elements in an array
 ```Java
@@ -107,12 +114,12 @@ n = n - placesToShift;
 * 256 length array to calculate the frequency
 * if need is to deal with individual digit in an number use this.
 ```Java
-int n = 123456789
-narray = (n + "").toCharArray() \\ ['1','2','3','4','5','6','7','8','9]
-````
+int n = 1234
+narray = (n + "").toCharArray() \\ ['1','2','3','4']
+```
 
-### sliding window is a very important problem - it applies to many substrings and subarray problems.
-* Hashset as the window 
+## sliding window is a very important problem - it applies to many substrings and subarray problems.
+* HashSet as the window 
 * Running pre/suffix sum and product 
 TODO: 
 ```code template for Sliding window```
@@ -122,34 +129,17 @@ TODO:
 >A rather straight forward solution is a two-pass algorithm using counting sort.
 First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
 
->1 pass: 
-``` Java
-int p0 = 0; // all elements to the left of this are 0 
-int p2 = nums.length - 1; // all elements to the right of this are 2
-for(int idx = p0; idx <= p2; idx++){
-	if(nums[idx] == 0 ){
-		swap(nums, p0, idx);
-		p0++;
-		continue;
-	}
-	if(nums[idx] == 2){
-		swap(nums, p2, idx);
-		p2--;
-		idx--;
-		continue;
-	}   
-}
-```
-+ generate array from arraylist
+* Generate array from arraylist
 ```Java
 new ArrayList().toArray(new Integer[0]);
 note: cannot convert to primitive types
 so cannot do this new ArrayList().toArray(new int[0]); ERROR
 ```
-* To initialize an array ``` Arrays.fill(arr, -1);```
-### String patterns & string calculations
+* To initialize an array ` Arrays.fill(arr, -1);`
 
-to get the asci value for using 26 int frequency array 
+## String patterns & string calculations
+
+* To get the asci value for using 26 int frequency array 
 ```Java
 'b' - 'a' = 1 returns int value
 'b' - 1 = 97 still returns the int value
@@ -158,36 +148,36 @@ to get the asci value for using 26 int frequency array
 #### A bit advanced topics in strings:
 ![alt text](/images/string_matching_algos.png)
 
-best time to buy and sell stocks:
-```Java
-for(currentPrice : prices){
-	if(minPrice > currentPrice){
-		minPrice = currentPrice;
-	}
-	else{
-		if(maxProfit < currentPrice - minPrice){
-			maxProfit = currentPrice - minPrice;
-		}
-	}
-}
-return maxProfit;
-```
+
 * Things about traversing from right to left.
 
 Kadane's algorithm:
 ```TODO```
 
 
-## Graphs:
-### Depth First Search: Depth wise
+# Graphs:
+* Making adjency list quickly.
+```Java
+public List<Integer>[] getAdjacencyList(int n, int[][] prereqs) {
+        List<Integer>[] list = new ArrayList[n];
+        for (int[] prereq : prereqs){
+            if(list[prereq[0]] == null){
+                list[prereq[0]]  = new ArrayList<>();
+            }
+            list[prereq[0]].add(prereq[1]);
+        }
+       return list;
+    }
+```
+
+## Depth First Search: Depth wise
 > DFS has an issue when the Depth of tree is very large, for python 1000 
 
 Time complexity: for adjacency List O(V+E)
 Space complexity: ??
 
-* Many problems using DFS 
-* Maze search, connected Islands, 
-`few problems which seems DFS but arent be aware of that trick, if order of print matters then its not DFS, its most probably Topological sort`
+* Many problems using DFS  
+`few problems which seems DFS but arent, be aware of that trick, if order of print matters then its not DFS, its most probably Topological sort`
 
 ```Java
 int [][] Directions = new int[][]{
@@ -202,17 +192,17 @@ int [][] Directions = new int[][]{
 DFS(Node node, HashSet<Node> visited){
 	if(visited.contains(node))
 		return // you have detected cycle
-	visited(node);
+	visited.add(node);
 	// do something with DFS, print it (?? ) search it
 	for(Node neighnors : node){
 		DFS(neignors, visited);
 	}
 	// if ans not found, the mark the node un-visited also, so it can be reached via another path 
-	unvisit(node);
+	unvisit.remove(node);
 }
 ```
 
-### Topological sort: 
+## Topological sort: 
 ```Java
 private boolean topologicalSort(int course, List<Integer> result) {
         if (done[course])
@@ -238,10 +228,7 @@ private boolean topologicalSort(int course, List<Integer> result) {
 > Leads to the shortest path in the graph
 Time complexity: for adjacency List O(V+E)
 Space complexity: ??
-* common problems and uses // TODO
-1. Zig Zag traversal, level wise sum, traversal.
-2. RightSideView
-not very interesting problems on BFS
+Not very interesting problems on BFS
 ```Java
 Queue<something> queue = new LinkedList();
 queue.add(rootNote);
@@ -255,6 +242,9 @@ while(!queue.isEmpty()){
 	}
 }
 ```
+# PriorityQueue:
+* to find max element use min-heap (want to preserve max element at the bottom)
+* to find min element use max-heap (want to preserve min element at the bottom)
 
 #### Multi-source BFS
 Add all the sources to the initial queue.
@@ -280,19 +270,7 @@ whie(fast != null || fast.next != null){
 }
 ```
 
-### Trees: 
-
-```Java
-//This is the poor man's sorted insertion / Binary Search Tree 
-    ArrayList<Integer> list = new ArrayList<Integer>() {
-        public boolean add(Integer mt) {
-            int index = Collections.binarySearch(this, mt);
-            if (index < 0) index = ~index;
-            super.add(index, mt);
-            return true;
-        }
-    };
-```
+# Trees: 
 
 Tree problems are designed tot think recursively.
 ```Java
@@ -323,3 +301,20 @@ equality and other which traverses the subtree.
 # Java Specific
 
 #### comparable and Comparable
+
+### Communication: 
+> Once you get into coding questions, communication is the key. A candidate who needed some help along the way but communicated clearly can be even better than a candidate who breezed through the question.
+
+1. Understand what kind of problem it is. 
+2. Think out loud
+3. Slow the eff down
+4. Get unstuck
+    * Draw pictures
+    * Solve a simpler version of the problem
+    * Write a naive, inefficient solution and optimize it later
+5. Wait for a hint
+6. Think about the bounds on space and runtime
+7. Apply a common algorithmic pattern
+8. Get your thoughts down
+9. Call a helper function and keep moving
+
