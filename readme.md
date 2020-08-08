@@ -45,10 +45,10 @@ for(int i = arr.length-1; i > -1; --i){
 }
 ```
 
-// above is O(n2) way of solving subsequence problem, substring problems
+// Above is O(n2) way of solving subsequence problem, substring problems
 
-* memorize the code for deletion of element in an array
-* memorize the code for shift elements in an array
+* Memorize the code for deletion of element in an array
+* Memorize the code for shift elements in an array
 ```Java
 placesToShift = 0
 int index = 0 
@@ -62,9 +62,9 @@ while(index < n){
 }
 n = n - placesToShift;
 ```
-* if the solution takes n^2, try to sort the array (not possible in case of subsequence and subarray problems)
+* If the solution takes n^2, try to sort the array (not possible in case of subsequence and subarray problems)
 * 256 length array to calculate the frequency
-* if need is to deal with individual digit in an number use this.
+* If need is to deal with individual digit in an number use this.
 ```Java
 int n = 1234
 narray = (n + "").toCharArray() \\ ['1','2','3','4']
@@ -129,7 +129,7 @@ Time complexity: for adjacency List O(V+E)
 Space complexity: ??
 
 * Many problems using DFS  
-`few problems which seems DFS but arent, be aware of that trick, if order of print matters then its not DFS, its most probably Topological sort`
+`Few problems which seems DFS but arent, be aware of that trick, if order of print matters then its not DFS, its most probably Topological sort`
 
 ```Java
 int [][] Directions = new int[][]{
@@ -149,8 +149,9 @@ DFS(Node node, HashSet<Node> visited){
 	for(Node neighnors : node){
 		DFS(neignors, visited);
 	}
-	// if ans not found, the mark the node un-visited also, so it can be reached via another path 
-	unvisit.remove(node);
+	// if ans not found, the mark the node un-visited also, 
+	// so it can be reached via another path 
+	visited.remove(node);
 }
 ```
 
@@ -199,22 +200,18 @@ Add all the sources to the initial queue.
 
 ## Traversal
 1. Inorder
-2. Preorder 
+2. Preorder
 3. PostOrder
 
-* checking of two trees are similar / two subtrees are similar needs two functions, one which check 
+* Checking of two trees are similar / two subtrees are similar needs two functions, one which check 
 equality and other which traverses the subtree.
 
 # PriorityQueue:
-* to find max element use min-heap (want to preserve max element at the bottom)
-* to find min element use max-heap (want to preserve min element at the bottom)
+* To find max element use min-heap (want to preserve max element at the bottom)
+* To find min element use max-heap (want to preserve min element at the bottom)
 
 ## Trees
 * Tree problems are designed tot think recursively.
-
-# PriorityQueue:
-* to find max element use min-heap (want to preserve max element at the bottom)
-* to find min element use max-heap (want to preserve min element at the bottom)
 
 
 # MISC
