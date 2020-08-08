@@ -235,6 +235,7 @@ private boolean topologicalSort(int course, List<Integer> result) {
 ```
 
 ### Breadth First Search: Level wise
+> Leads to the shortest path in the graph
 Time complexity: for adjacency List O(V+E)
 Space complexity: ??
 * common problems and uses // TODO
@@ -254,6 +255,9 @@ while(!queue.isEmpty()){
 	}
 }
 ```
+
+#### Multi-source BFS
+Add all the sources to the initial queue.
 
 ## Backtracking 
 
@@ -302,6 +306,14 @@ public Node insert(Node root, int value){
 	return root;
 }
 ```
+
+#### Traversal
+1. Inorder
+2. Preorder 
+3. PostOrder
+
+* checking of two trees are similar / two subtrees are similar needs two functions, one which check 
+equality and other which traverses the subtree.
 
 ### PriorityQueue:
 * to find max element use min-heap (want to preserve max element at the bottom)
