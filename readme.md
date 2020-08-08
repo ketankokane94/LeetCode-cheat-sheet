@@ -32,53 +32,6 @@ int[] mergeInterval(int[] a , int[] b){
 }
 ```
 
-# MISC
-## Handling time strings
-```Java
-// convert everything to minutes, was the trick 23:59 is how many minutes ?
-String str = "23:59";
-String[] split = str.split(":", 2);
-int hour = Integer.parseInt(split[0]) * 60;
-int min =  Integer.parseInt(split[1]);
-return hour + min;
-```
-
-# Classic problems
-1. Dutch flag problem
-
-``` Java
-int p0 = 0; // all elements to the left of this are 0 
-int p2 = nums.length - 1; // all elements to the right of this are 2
-for(int idx = p0; idx <= p2; idx++){
-	if(nums[idx] == 0 ){
-		swap(nums, p0, idx);
-		p0++;
-		continue;
-	}
-	if(nums[idx] == 2){
-		swap(nums, p2, idx);
-		p2--;
-		idx--;
-		continue;
-	}   
-}
-```
-
-2. Best time to buy and sell stocks:
-```Java
-for(currentPrice : prices){
-	if(minPrice > currentPrice){
-		minPrice = currentPrice;
-	}
-	else{
-		if(maxProfit < currentPrice - minPrice){
-			maxProfit = currentPrice - minPrice;
-		}
-	}
-}
-return maxProfit;
-```
-
 # Strings and arrays:
 * Cannot sort in subsequence subarray problems
 ```Java
@@ -241,50 +194,10 @@ while(!queue.isEmpty()){
 	}
 }
 ```
-# PriorityQueue:
-* to find max element use min-heap (want to preserve max element at the bottom)
-* to find min element use max-heap (want to preserve min element at the bottom)
-
-#### Multi-source BFS
+* Multi-source BFS
 Add all the sources to the initial queue.
 
-## Backtracking 
-
-## Dynamic programming 
-
-## Permutation & combinations
-
-# Datastructure 
-### Linked List
-* Dummy head 
-* Runner techniques are two main techniques when solving problems involving linked list 
-Limitations of linked List, cannot index into the element, cannot traverse back in singly linked list
-
-Find the middle element using runner technique
-```Java
-Node fast = head; Node slow = fast;
-whie(fast != null || fast.next != null){
-	fast = fast.next.next;
-	slow = slow.next;
-}
-```
-
-# Trees: 
-
-Tree problems are designed tot think recursively.
-```Java
-public Node insert(Node root, int value){
-	if(root == null )
-		return new Node(value);
-	if(value <= root.value)
-		root.left = insert(root.left, value);	
-	else
-		root.right = insert(root.right, value );
-	return root;
-}
-```
-
-#### Traversal
+## Traversal
 1. Inorder
 2. Preorder 
 3. PostOrder
@@ -292,14 +205,65 @@ public Node insert(Node root, int value){
 * checking of two trees are similar / two subtrees are similar needs two functions, one which check 
 equality and other which traverses the subtree.
 
-### PriorityQueue:
+# PriorityQueue:
 * to find max element use min-heap (want to preserve max element at the bottom)
 * to find min element use max-heap (want to preserve min element at the bottom)
-### Trie
 
-# Java Specific
+## Trees
+* Tree problems are designed tot think recursively.
 
-#### comparable and Comparable
+# PriorityQueue:
+* to find max element use min-heap (want to preserve max element at the bottom)
+* to find min element use max-heap (want to preserve min element at the bottom)
+
+
+# MISC
+## Handling time strings
+```Java
+// convert everything to minutes, was the trick 23:59 is how many minutes ?
+String str = "23:59";
+String[] split = str.split(":", 2);
+int hour = Integer.parseInt(split[0]) * 60;
+int min =  Integer.parseInt(split[1]);
+return hour + min;
+```
+
+# Classic problems
+1. Dutch flag problem
+
+``` Java
+int p0 = 0; // all elements to the left of this are 0 
+int p2 = nums.length - 1; // all elements to the right of this are 2
+for(int idx = p0; idx <= p2; idx++){
+	if(nums[idx] == 0 ){
+		swap(nums, p0, idx);
+		p0++;
+		continue;
+	}
+	if(nums[idx] == 2){
+		swap(nums, p2, idx);
+		p2--;
+		idx--;
+		continue;
+	}   
+}
+```
+
+2. Best time to buy and sell stocks:
+```Java
+for(currentPrice : prices){
+	if(minPrice > currentPrice){
+		minPrice = currentPrice;
+	}
+	else{
+		if(maxProfit < currentPrice - minPrice){
+			maxProfit = currentPrice - minPrice;
+		}
+	}
+}
+return maxProfit;
+```
+
 
 ### Communication: 
 > Once you get into coding questions, communication is the key. A candidate who needed some help along the way but communicated clearly can be even better than a candidate who breezed through the question.
