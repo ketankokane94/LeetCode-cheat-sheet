@@ -23,11 +23,11 @@
 
 `[[1, 2], [4, 7]]`
 ```Java
-public boolean overlap(int[] a, int[]b){
+boolean overlap(int[] a, int[]b){
 	return a[0]<b[1] &&  b[0]<a[1];
 }
 
-public int[] mergeInterval(int[] a , int[] b){
+int[] mergeInterval(int[] a , int[] b){
 	return new int[]{Math.min(a[0], b[0]), Math.max(a[1], b[1])};
 }
 ```
@@ -35,13 +35,12 @@ public int[] mergeInterval(int[] a , int[] b){
 # MISC
 ## Handling time strings
 ```Java
-private int convert(String str){
-	// convert everything to minutes, was the trick 23:59 is how many minutes ?
-        String[] split = str.split(":", 2);
-        int hour = Integer.parseInt(split[0]) * 60;
-        int min =  Integer.parseInt(split[1]);
-        return hour + min;
-    }
+// convert everything to minutes, was the trick 23:59 is how many minutes ?
+String str = "23:59";
+String[] split = str.split(":", 2);
+int hour = Integer.parseInt(split[0]) * 60;
+int min =  Integer.parseInt(split[1]);
+return hour + min;
 ```
 
 # Classic problems
