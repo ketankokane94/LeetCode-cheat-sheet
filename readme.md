@@ -1,5 +1,5 @@
 
-# Bit Manipulation 
+### Bit Manipulation 
 * I use it to find the middle element of an array, given left and right most index
 
 
@@ -16,23 +16,21 @@
 5 >> 1 = 2
 ```
 
-# Intervals[a,b]: 
+### Intervals[a,b]: 
 * Sort intervals based on the __start time__. 
 	* Meeting rooms
 	* Meeting rooms which uses Priority Queue
-
 `[[1, 2], [4, 7]]`
 ```Java
 boolean overlap(int[] a, int[]b){
 	return a[0]<b[1] &&  b[0]<a[1];
 }
-
 int[] mergeInterval(int[] a , int[] b){
 	return new int[]{Math.min(a[0], b[0]), Math.max(a[1], b[1])};
 }
 ```
 
-# Strings and arrays:
+### Strings and arrays:
 * Cannot sort in subsequence subarray problems
 ```Java
 for(int i = arr.length-1; i > -1; --i){
@@ -50,8 +48,7 @@ for(int i = arr.length-1; i > -1; --i){
 * Memorize the code for deletion of element in an array
 * Memorize the code for shift elements in an array
 ```Java
-placesToShift = 0
-int index = 0 
+placesToShift = 0 ; int index = 0; 
 while(index < n){
 	if(arr[index].isIn(removeList){
 		placesToShift++;
@@ -66,11 +63,10 @@ n = n - placesToShift;
 * 256 length array to calculate the frequency
 * If need is to deal with individual digit in an number use this.
 ```Java
-int n = 1234
-narray = (n + "").toCharArray() \\ ['1','2','3','4']
+narray = (1234 + "").toCharArray() \\ ['1','2','3','4']
 ```
 
-## sliding window is a very important problem - it applies to many substrings and subarray problems.
+#### sliding window is a very important problem - it applies to many substrings and subarray problems.
 * HashSet as the window 
 * Running pre/suffix sum and product 
 TODO: 
@@ -89,7 +85,7 @@ so cannot do this new ArrayList().toArray(new int[0]); ERROR
 ```
 * To initialize an array ` Arrays.fill(arr, -1);`
 
-## String patterns & string calculations
+#### String patterns & string calculations
 
 * To get the asci value for using 26 int frequency array 
 ```Java
@@ -97,7 +93,7 @@ so cannot do this new ArrayList().toArray(new int[0]); ERROR
 'b' - 1 = 97 still returns the int value
 (char)('b' - 1) = 'a' need to explicitly type cast into character
 ```
-#### A bit advanced topics in strings:
+###### A bit advanced topics in strings:
 ![alt text](/images/string_matching_algos.png)
 
 
@@ -107,22 +103,22 @@ Kadane's algorithm:
 ```TODO```
 
 
-# Graphs:
+### Graphs:
 * Making adjency list quickly.
 ```Java
-public List<Integer>[] getAdjacencyList(int n, int[][] prereqs) {
-        List<Integer>[] list = new ArrayList[n];
-        for (int[] prereq : prereqs){
-            if(list[prereq[0]] == null){
-                list[prereq[0]]  = new ArrayList<>();
-            }
-            list[prereq[0]].add(prereq[1]);
-        }
-       return list;
-    }
+List<Integer>[] getAdjacencyList(int n, int[][] prereqs) {
+	List<Integer>[] list = new ArrayList[n];
+	for (int[] prereq : prereqs){
+	    if(list[prereq[0]] == null){
+		list[prereq[0]]  = new ArrayList<>();
+	    }
+	    list[prereq[0]].add(prereq[1]);
+	}
+	return list;
+}
 ```
 
-## Depth First Search: Depth wise
+#### Depth First Search: Depth wise
 > DFS has an issue when the Depth of tree is very large, for python 1000 
 
 Time complexity: for adjacency List O(V+E)
@@ -155,7 +151,7 @@ DFS(Node node, HashSet<Node> visited){
 }
 ```
 
-## Topological sort: 
+#### Topological sort: 
 ```Java
 private boolean topologicalSort(int course, List<Integer> result) {
         if (done[course])
@@ -177,7 +173,7 @@ private boolean topologicalSort(int course, List<Integer> result) {
     }
 ```
 
-### Breadth First Search: Level wise
+#### Breadth First Search: Level wise
 > Leads to the shortest path in the graph
 Time complexity: for adjacency List O(V+E)
 Space complexity: ??
@@ -198,7 +194,7 @@ while(!queue.isEmpty()){
 * Multi-source BFS
 Add all the sources to the initial queue.
 
-## Traversal
+#### Traversal
 1. Inorder
 2. Preorder
 3. PostOrder
@@ -206,16 +202,16 @@ Add all the sources to the initial queue.
 * Checking of two trees are similar / two subtrees are similar needs two functions, one which check 
 equality and other which traverses the subtree.
 
-# PriorityQueue:
+### PriorityQueue:
 * To find max element use min-heap (want to preserve max element at the bottom)
 * To find min element use max-heap (want to preserve min element at the bottom)
 
-## Trees
+#### Trees
 * Tree problems are designed tot think recursively.
 
 
-# MISC
-## Handling time strings
+### MISC
+#### Handling time strings
 ```Java
 // convert everything to minutes, was the trick 23:59 is how many minutes ?
 String str = "23:59";
@@ -225,7 +221,7 @@ int min =  Integer.parseInt(split[1]);
 return hour + min;
 ```
 
-# Classic problems
+### Classic problems
 1. Dutch flag problem
 
 ``` Java
@@ -262,7 +258,7 @@ return maxProfit;
 ```
 
 
-### Communication: 
+##### Communication: 
 > Once you get into coding questions, communication is the key. A candidate who needed some help along the way but communicated clearly can be even better than a candidate who breezed through the question.
 
 1. Understand what kind of problem it is. 
