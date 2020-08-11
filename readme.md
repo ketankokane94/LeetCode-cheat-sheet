@@ -65,6 +65,7 @@ n = n - placesToShift;
 ```Java
 narray = (1234 + "").toCharArray() \\ ['1','2','3','4']
 ```
+* Looking for dup/unique : try hashing/Bit Manipulation, (also consider that you can use the array itself for hashing)
 
 #### sliding window is a very important problem - it applies to many substrings and subarray problems.
 * HashSet as the window 
