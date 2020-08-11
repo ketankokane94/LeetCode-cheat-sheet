@@ -47,7 +47,6 @@ Motivated, Driven, Goal Oriented. Computer Programming enthusiast and Computer S
 
 * What are you currently working on 
 
-
 * You are in charge of a project and the time is limited, how would you manage to deliver results and set expectations?
 > from an engineering point of view, I would do something like poker sizing, with aim to break down the entire result into sub-results and estimate each task and come up with a realistic goal of how much can be delivered within the given time frame.
 
@@ -97,15 +96,20 @@ Have simple definition of fancy java terms.
 * Can you tell me few tools the team uses? Just to sense of the working environment. 
 * What's the release cycle like for the project. 
 * Does the team follow agile methodology?
-* What's the internship program like?
-* How many interns?
 * Can you share more about the day-to-day responsibilities of this position? What’s a typical day like?
 * What are your favorite and least favorite parts of the job?
-* Why did you decide to join Company X?
-* Can you tell me about the opportunities for career advancement at Company X?
 
 
 ## Description of each project:
 
 * Automatic Scheduler:
 > I am a man of routine, who is also a sort of geek in nature, on waking up every morning, I use google calendar to schedule my entire day, so I know at what time I would be doing what activity. I decide to write a tool which interacted with google calendar and google tasks API and using some complex scheduling algorithm figures out a daily schedule for me and pushes it back to the google calendar for  me to access.
+
+
+# About ME:
+
+My name is Ketan Kokane, currently, I'm completing my Masters in Computer Science and gearing myself to enter the industry with motivation and a strong desire for personal growth and development. My main focus currently is on learning new things, adding tools to my tool kit, work excitement, and team recognition.
+ 
+I have two-plus years of industry experience in software development, So I do consider myself aware of the various processes and aspects of working as a Software Engineer. My recent employment was with PayPal as a Software Engineer Intern. Wherein I worked on a COVID response project to launch touchless payment options. During my internship, my colleagues have listed professionalism, being through, highly analytical, initiative taker, bold, and possession of strong technical fundamentals.
+
+I would weight more towards enjoying my work and the people I do it with, over job titles or positions. I consider it to be my strength to seek improvement in any manifestation in any work that I do.
