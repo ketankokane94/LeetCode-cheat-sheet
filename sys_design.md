@@ -3,11 +3,19 @@
 
 ## Load balancer
 
-1. operates at L4 or L7 of OSI model, most operate at L7
-2. Round Robin / load based
+1. operates at L4 : Layer 4 load balancers look at info at the transport layer to decide how to distribute requests. Generally, this involves the source, destination IP addresses, and ports in the header, but not the contents of the packet. 
+
+2. or L7 of OSI model, most operate at L7 : Layer 7 load balancers look at the application layer to decide how to distribute requests. This can involve contents of the header, message, and cookies. Layer 7 load balancers terminate network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server. For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
+
+At the cost of flexibility, layer 4 load balancing requires less time and computing resources than Layer 7, although the performance impact can be minimal on modern commodity hardware.
+
+2. Round Robin / load based / Sessions
 
     * NGINX
     * HAProxy
+
+To protect against failures, it's common to set up multiple load balancers, either in active-passive or active-active mode.
+
 
 ## caching
 
@@ -65,8 +73,8 @@
 * D : Drive discussion
     * Talk 80 % of the time in the sys design interview
 
-*Features: Ask interviewer about the features of the system. Its important to define those as much as possible early on
-*Defining API: What are the API's, who would be calling them and how they are going to use it
+* Features: Ask interviewer about the features of the system. Its important to define those as much as possible early on
+* Defining API: What are the API's, who would be calling them and how they are going to use it
 
 **First 10 mins of the interview can be thought of OOD** 
 
@@ -107,4 +115,61 @@
 ### PAKOS
 
 * Leader election over distributed hosts
+
+
+## consistency patterns
+
+1. Weak consistency: VoIP, video chat, RT multiplayer game. For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.
+
+2. Eventual consistency: After a write, reads will eventually see it (typically within milliseconds). Data is replicated asynchronously. EX. DNS, Emails. (Seen in high available systems)
+
+3. Strong consistency: Data is replicated synchronously.  Works well in systems that need transactions. 
+
+## Availability Pattern: 
+There are two complementary patterns to support high availability: fail-over and replication.
+
+1. Fail-Over:
+* Master - Slave (Active - Passive)
+* Master - Master (Active - Active)
+* Adds cost of extra hardware
+
+2. replication: 
+
+
+# Domain Name Systems:
+A Domain Name System (DNS) translates a domain name such as www.example.com to an IP address.
+
+Services such as CloudFlare and Route 53 provide managed DNS services
+
+
+# Outline Use case, constraints and assumptions:
+
+1. Who is the user ?
+1. How are they going to use it ?
+1. How many users are there ?
+1. What does the system do ?
+1. What are the ips and ops of the system ?
+1. How much data do we expect ?
+1. How many requests per second do we expect ?
+1. What is the expected read to write ratio ?
+
+
+
+## Example
+
+1. Why do we need it ? ( Not required to ask it everytime, its for understanding the system)
+
+1. Requirements and goals of the system
+1. Capacity estimation (Should it be this early in the game ? )
+1. System API (CRUD API)
+1. Database design
+1. Basic System Design and Algorithm (This can involve a lot of details)
+1. Data partitioning and replication 
+1. Cache
+1. Load balancer
+1. Purging or Cleaning Database
+
+
+
+
 
