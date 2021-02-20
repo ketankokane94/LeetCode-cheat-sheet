@@ -173,3 +173,32 @@ Services such as CloudFlare and Route 53 provide managed DNS services
 
 
 
+# Key concepts
+## Storage:
+    1. Can be relational or No SQL (use Relational when ACID is paramount)
+    2. Assume a single db server can store 4TB of data (so Number of machines = data / 4TB)
+    3. Horizontal sharding (shard based on what attribute)
+        * Keeps keys unique by using a key generation service
+
+### DB replication (salve master)
+
+* One master many slaves.
+* For strong consistency always read from the master or memcache data, as replications may not have been updated. 
+(E.G. User updated his profile and now immediately wants to see the changes)
+* can use caching and replication to scale out reads. (with multiple copies we can logically scale to infinite reads)
+
+* use of transactions in SQL to manage concurrency
+    1. row level lock
+    
+
+
+## Messaging systems:
+    * Need of session service which keeps a track of which user is connected to which server.
+    * Use web sockets
+    * Need a mechanism to generate messafe sequence
+
+
+## NewsFeed generation: 
+    * Such system have a high requirement of cache 
+    * Need a special service to generate the feeds
+
